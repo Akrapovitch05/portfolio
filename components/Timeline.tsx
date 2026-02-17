@@ -21,7 +21,7 @@ export const Timeline = () => {
             title: "Concepteur Développeur d'Applications (Bac+3)",
             school: "CESI Lyon",
             description: "Apprentissage par Projets (PBL) : Résolution de problèmes concrets en autonomie, simulant la réalité en entreprise. Développement d'une rigueur professionnelle et d'une capacité d'adaptation rapide.",
-            logo: "/logo_cesi.png", // Use real logo
+            logo: "/logo_cesi_banner.jpg", // Use new banner logo
             color: "bg-indigo-500",
             textColor: "text-indigo-400",
             current: true
@@ -31,7 +31,7 @@ export const Timeline = () => {
             title: "Manager en Architecture et Systèmes Logiciels (Bac+5)",
             school: "CESI Lyon - Programme Grande École",
             description: "Cycle Ingénieur en alternance. Objectif : Devenir un expert technique capable de piloter des projets d'envergure. Recherche d'une alternance de 3 ans pour construire une relation de confiance durable.",
-            logo: "/logo_cesi.png", // Use real logo
+            logo: "/logo_cesi_banner.jpg", // Use new banner logo
             color: "bg-purple-500",
             textColor: "text-purple-400",
             highlight: true

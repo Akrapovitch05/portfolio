@@ -14,29 +14,30 @@ export default function Home() {
     <main className="min-h-screen p-4 md:p-8 flex items-center justify-center">
       <div className="w-full max-w-7xl animate-fade-in space-y-8">
         <BentoGrid>
-          {/* Bloc A: Identité */}
+          {/* Row 1-2: Hero (2x2) + Stack (1x2) */}
           <Hero />
-
-          {/* Bloc B: Flagship Project */}
-          <ProjectCard />
-
-          {/* Bloc C: Stack Technique */}
           <Stack />
 
-          {/* Bloc D: Vlogs */}
+          {/* Row 3: Flagship Project (2x1) + Vlogs (1x1) */}
+          <ProjectCard />
           <Vlogs />
 
-          {/* Bloc Timeline: Parcours & Ambitions */}
+          {/* Row 4: Timeline (3x1) */}
           <Timeline />
 
-          {/* Bloc E: Expérience */}
-          <Experience />
-
-          {/* Bloc F: Contact/Socials */}
-          <Socials />
-
-          {/* Bloc G: Contact Form */}
+          {/* Row 5-6: Contact (2x2) + Experience (1x1) + Socials (1x1) */}
           <ContactForm />
+
+          <Experience />
+          <Socials />
+          {/* Wait, Experience and Socials are separate BentoCards. 
+              If ContactForm is 2x2, we can just place Experience and Socials after it. 
+              The grid auto-flow will handle it:
+              - ContactForm takes (0,0)-(1,1) in the 2x2 subgrid of available space.
+              - Experience takes (2,0).
+              - Socials takes (2,1).
+              So I should NOT wrap them in a div, just list them.
+          */}
         </BentoGrid>
 
         <footer className="text-center text-zinc-600 text-sm py-8">
