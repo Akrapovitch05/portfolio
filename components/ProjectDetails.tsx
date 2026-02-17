@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { X, CheckCircle2, Server, Database, Smartphone, FileText, Globe, ArrowRight } from "lucide-react";
+import NextImage from "next/image";
 import { useEffect } from "react";
 
 interface ProjectDetailsProps {
@@ -145,13 +146,26 @@ export const ProjectDetails = ({ isOpen, onClose }: ProjectDetailsProps) => {
                     <div>
                         <h3 className="text-xl font-bold text-white mb-6">Aperçu de l'interface</h3>
                         <div className="grid grid-cols-2 gap-4">
-                            <div className="aspect-video rounded-xl bg-zinc-800/50 border border-white/5 flex items-center justify-center group overflow-hidden relative">
-                                <div className="text-zinc-600 font-medium group-hover:scale-105 transition-transform">Dashboard Admin</div>
-                                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-transparent" />
+                            <div className="aspect-video rounded-xl bg-zinc-800/50 border border-white/5 overflow-hidden relative group">
+                                <NextImage
+                                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop"
+                                    alt="Dashboard Admin"
+                                    fill
+                                    className="object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
+                                <div className="absolute bottom-4 left-4 text-white font-medium text-sm">Dashboard Admin</div>
                             </div>
-                            <div className="aspect-video rounded-xl bg-zinc-800/50 border border-white/5 flex items-center justify-center group overflow-hidden relative">
-                                <div className="text-zinc-600 font-medium group-hover:scale-105 transition-transform">Espace Chauffeur</div>
-                                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent" />
+
+                            <div className="aspect-video rounded-xl bg-zinc-800/50 border border-white/5 overflow-hidden relative group">
+                                <NextImage
+                                    src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=800&auto=format&fit=crop"
+                                    alt="Interface Mobile"
+                                    fill
+                                    className="object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
+                                <div className="absolute bottom-4 left-4 text-white font-medium text-sm">Interface Mobile</div>
                             </div>
                         </div>
                     </div>

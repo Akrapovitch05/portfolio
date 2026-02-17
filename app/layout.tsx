@@ -5,17 +5,54 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Akram Kibout | Future Ingénieur - Portfolio",
-  description: "Portfolio de Akram Kibout, Étudiant en Cycle Ingénieur Informatique au CESI Lyon. Développeur Fullstack (Symfony/React).",
-  keywords: ["Akram Kibout", "Portfolio", "Développeur Fullstack", "Symfony", "React", "Alternance", "Ingénieur", "CESI Lyon"],
+  title: "Akram Kibout | Concepteur Développeur Fullstack - Portfolio",
+  description: "Portfolio d'Akram Kibout, étudiant en cycle ingénieur au CESI Lyon. Développeur Fullstack (Symfony/React) en recherche d'alternance pour 2026.",
+  keywords: ["Akram Kibout", "Développeur Fullstack", "Symfony", "React", "Next.js", "Alternance", "Ingénieur", "CESI Lyon", "Portfolio"],
+  authors: [{ name: "Akram Kibout" }],
+  creator: "Akram Kibout",
+  publisher: "Akram Kibout",
+  robots: "index, follow",
+  alternates: {
+    canonical: "https://akramkibout.fr",
+  },
   openGraph: {
-    title: "Akram Kibout | Future Ingénieur - Portfolio",
-    description: "Découvrez mon portfolio : Projets Fullstack, Soft Skills & Vlogs. Recherche d'alternance 2026.",
+    title: "Akram Kibout | Concepteur Développeur Fullstack",
+    description: "Découvrez mes projets et mon parcours. Recherche d'alternance Ingénieur (3 ans) à partir de 2026.",
     url: "https://akramkibout.fr",
     siteName: "Akram Kibout Portfolio",
     locale: "fr_FR",
-    type: "website",
+    type: "profile",
+    images: [
+      {
+        url: "https://akramkibout.fr/me.jpg",
+        width: 800,
+        height: 800,
+        alt: "Akram Kibout",
+      },
+    ],
   },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Akram Kibout",
+  "jobTitle": "Concepteur Développeur",
+  "url": "https://akramkibout.fr",
+  "image": "https://akramkibout.fr/me.jpg",
+  "sameAs": [
+    "https://linkedin.com/in/AkramKibout",
+    "https://github.com/Akrapovitch05"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "CESI Lyon"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lyon",
+    "addressCountry": "FR"
+  }
 };
 
 import { Spotlight } from "@/components/Spotlight";
@@ -36,6 +73,11 @@ export default function RootLayout({
           <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-500/10 rounded-full blur-[120px] animate-pulse delay-1000" />
           <div className="absolute top-[40%] left-[40%] w-[20%] h-[20%] bg-blue-500/5 rounded-full blur-[100px] animate-pulse delay-2000" />
         </div>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
 
         {children}
       </body>
