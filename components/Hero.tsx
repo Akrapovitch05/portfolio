@@ -12,18 +12,19 @@ export const Hero = () => {
 
     return (
         <>
-            <BentoCard colSpan={2} rowSpan={2} className="relative group">
+            <BentoCard colSpan={2} rowSpan={1} className="relative group">
                 <div className="absolute top-4 right-4 animate-pulse">
-                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-medium">
-                        <span className="w-2 h-2 rounded-full bg-green-500 animate-ping" />
-                        Recherche Alternance - Cycle Ingénieur (3 ans)
+                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-[10px] font-medium">
+                        <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-ping" />
+                        Recherche Alternance (3 ans)
                     </span>
                 </div>
 
-                <div className="mt-8 flex flex-col gap-6 z-10 h-full">
-                    <div className="flex items-start justify-between">
+                <div className="flex flex-col md:flex-row gap-6 z-10 h-full items-center md:items-start">
+                    {/* Left: Identity */}
+                    <div className="flex flex-col items-center md:items-start text-center md:text-left shrink-0">
                         <div
-                            className="w-24 h-24 rounded-full border-2 border-white/10 overflow-hidden relative shrink-0 group-hover:border-indigo-500/50 transition-colors cursor-pointer"
+                            className="w-20 h-20 rounded-full border-2 border-white/10 overflow-hidden relative group-hover:border-indigo-500/50 transition-colors cursor-pointer mb-3"
                             onClick={() => setIsModalOpen(true)}
                         >
                             <Image
@@ -34,32 +35,26 @@ export const Hero = () => {
                                 priority
                             />
                         </div>
-
-                        <div className="flex flex-col items-end text-right">
-                            <div className="flex items-center gap-2 text-zinc-500 text-sm mb-2">
-                                <MapPin size={16} />
-                                <span>Lyon 7, France</span>
-                            </div>
-                            <h1 className="text-3xl font-bold tracking-tight text-white mb-1">
-                                Akram Kibout
-                            </h1>
-                            <p className="text-indigo-400 font-medium text-lg">
-                                Concepteur Développeur
-                            </p>
-                            <p className="text-zinc-500 text-sm">
-                                @ CESI Lyon
-                            </p>
+                        <h1 className="text-2xl font-bold tracking-tight text-white leading-tight">
+                            Akram Kibout
+                        </h1>
+                        <p className="text-indigo-400 font-medium text-sm">
+                            Concepteur Développeur
+                        </p>
+                        <div className="flex items-center gap-1 text-zinc-500 text-xs mt-1">
+                            <MapPin size={12} />
+                            <span>Lyon, France</span>
                         </div>
                     </div>
 
-                    <div className="space-y-4 max-w-lg">
-                        <p className="text-zinc-300 leading-relaxed">
-                            Passionné par l'architecture logicielle et le développement fullstack.
-                            J'aime transformer des besoins complexes en solutions <span className="text-white font-semibold">robustes</span> et <span className="text-white font-semibold">élégantes</span>.
+                    {/* Right: Bio & Skills */}
+                    <div className="flex flex-col justify-center h-full pt-2">
+                        <p className="text-zinc-300 text-sm leading-relaxed mb-4 line-clamp-3">
+                            Passionné par l'architecture logicielle. J'aime transformer des besoins complexes en solutions <span className="text-white font-semibold">robustes</span> et <span className="text-white font-semibold">élégantes</span>.
                         </p>
                         <div className="flex flex-wrap gap-2">
                             {["Rigueur", "Travail d'équipe", "Curiosité", "Autonomie"].map((skill) => (
-                                <span key={skill} className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-zinc-400">
+                                <span key={skill} className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] text-zinc-400">
                                     {skill}
                                 </span>
                             ))}

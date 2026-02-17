@@ -35,7 +35,7 @@ export const ContactForm = () => {
     };
 
     return (
-        <BentoCard colSpan={2} rowSpan={2} className="relative overflow-hidden">
+        <BentoCard colSpan={2} className="relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute -top-24 -right-24 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl" />
 

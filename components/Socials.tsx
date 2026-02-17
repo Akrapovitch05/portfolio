@@ -12,7 +12,7 @@ export const Socials = () => {
     ];
 
     return (
-        <BentoCard className="grid grid-cols-2 gap-4 place-items-center">
+        <BentoCard colSpan={2} className="grid grid-cols-4 gap-4 place-items-center">
             {socials.map((social, index) => (
                 <a
                     key={index}
