@@ -25,13 +25,15 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to O2Switch
-        uses: appleboy/scp-action@v0.1.7
+      - name: Deploy to O2Switch (via FTP)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          host: ${{ secrets.HOST }}
+          server: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          port: 22
-          source: "out/*"
-          target: "/home/${{ secrets.USERNAME }}/portfolio/"
-          strip_components: 1
+          local-dir: ./out/
+          server-dir: portfolio/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
