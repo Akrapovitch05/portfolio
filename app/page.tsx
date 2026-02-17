@@ -7,6 +7,8 @@ import { Experience } from "@/components/Experience";
 import { Socials } from "@/components/Socials";
 import { ContactForm } from "@/components/ContactForm";
 
+import { Timeline } from "@/components/Timeline";
+
 export default function Home() {
   return (
     <main className="min-h-screen p-4 md:p-8 flex items-center justify-center">
@@ -23,6 +25,9 @@ export default function Home() {
 
           {/* Bloc D: Vlogs */}
           <Vlogs />
+
+          {/* Bloc Timeline: Parcours & Ambitions */}
+          <Timeline />
 
           {/* Bloc E: Expérience */}
           <Experience />

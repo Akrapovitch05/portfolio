@@ -1,0 +1,93 @@
+# 🚀 Portfolio Project Summary: From Zero to Deployment
+
+This document chronicles the complete development journey of **Akram Kibout's Digital Portfolio**, built to showcase full-stack engineering skills and secure a 3-year apprenticeship.
+
+---
+
+## 1. 🏗️ Foundations & Architecture
+**Objective**: Build a modern, high-performance, and visually striking personal site.
+
+*   **Tech Stack Selection**:
+    *   **Next.js 14**: For React Server Components and static export capabilities.
+    *   **Tailwind CSS (v4)**: For rapid, utility-first styling.
+    *   **Framer Motion**: For smooth, professional animations.
+    *   **Lucide React**: For consistent, clean iconography.
+*   **Design Philosophy**: adopted the **"Bento Grid"** aesthetic (Apple/Linear style) for a modular, data-dense, yet clean layout.
+*   **Structure**: Setup a clean `app` directory structure with modular components (`components/`) to ensure maintainability.
+
+---
+
+## 2. 🧩 Core Component Development
+We built the site block by block:
+
+### A. The Bento Grid System
+Developed a responsive grid layout using CSS Grid that adapts from single-column (mobile) to multi-column (desktop).
+*   **[BentoCard.tsx](file:///c:/Users/akram/PhpstormProjects/portfolio/components/BentoCard.tsx)**: A reusable wrapper component featuring a "glassmorphism" effect (translucent background, subtle borders) and hover animations.
+
+### B. Content Blocks
+1.  **Hero Section**:
+    *   Integrated your profile picture ([me.jpg](file:///c:/Users/akram/PhpstormProjects/portfolio/public/me.jpg)) with a glowing hover effect.
+    *   Added professional bio, location, and key "soft skills" tags.
+2.  **Tech Stack**:
+    *   Refactored a simple list into organized categories: **Frontend**, **Backend**, and **DevOps/Tools**.
+    *   Added color-coded icons (React, Symfony, Docker, etc.) for visual distinction.
+3.  **Vlogs & Personal**:
+    *   Created a section for your **YouTube Channel** to show personality.
+    *   Implemented a custom **Video Modal** to play videos directly on the site without redirecting users away.
+4.  **Experience**:
+    *   Detailed your background in **Logistics/Transport** to show industry knowledge relevant to your target sector.
+
+---
+
+## 3. 🚚 Flagship Project: "H Transport ERP"
+This was the centerpiece of the portfolio. We treated it as a full case study.
+
+*   **Project Modal**: Created [ProjectDetails.tsx](file:///c:/Users/akram/PhpstormProjects/portfolio/components/ProjectDetails.tsx), a comprehensive modal that opens when clicking the main project card.
+*   **Narrative**: Clearly articulated the **Problem** (Excel files, manual work), the **Solution** (Custom ERP/CRM), and the **Impact** (-30% admin time).
+*   **Real Assets Integration**:
+    *   Replaced generic placeholders with **REAL screenshots** you provided:
+        *   *Admin Dashboard* (Full width view).
+        *   *Mobile App Interface* (Driver input & tour details).
+    *   Added "Mission Alternance" badge to highlight the context.
+
+---
+
+## 4. 🎨 Visual Polish & User Experience
+We refined the "look and feel" to be premium and modern.
+
+*   **"Too Dark" Fix**: Added subtle, animated **gradient orbs** (Indigo/Purple) in the background to add depth and life to the dark theme.
+*   **Spotlight Effect**: Implemented a mouse-tracking light effect ([Spotlight.tsx](file:///c:/Users/akram/PhpstormProjects/portfolio/components/Spotlight.tsx)) that reveals card borders as you move.
+*   **Performance Fix (The "Lag" Issue)**:
+    *   *Problem*: The initial Spotlight component caused high Input Latency (INP > 500ms) because it triggered React re-renders on every mouse pixel movement.
+    *   *Solution*: Rewrote the component to use **Direct DOM Manipulation** and `requestAnimationFrame`, completely eliminating the lag.
+
+---
+
+## 5. 🔍 SEO & Professional Credibility
+We ensured Google (and recruiters) see the site as a professional entity.
+
+*   **Structured Data (JSON-LD)**: Injected `Person` schema so search engines understand who "Akram Kibout" is (Job Title, Alumni of CESI, Social Links).
+*   **Metadata**: Configured dynamic titles, descriptions, and OpenGraph tags for rich previews on LinkedIn/Discord.
+*   **Crawlability**: Generated automated `sitemap.xml` and `robots.txt` files.
+
+---
+
+## 6. 🚀 Automated Deployment (CI/CD)
+The final and most complex step: creating a "set it and forget it" workflow.
+
+*   **Infrastructure**: Targeted **O2Switch** (cPanel/Apache) hosting.
+*   **The Challenge**: O2Switch's firewall blocked standard SSH/SCP connections from GitHub Actions because GitHub's IP addresses rotate constantly.
+*   **The Solution**:
+    1.  Configured **GitHub Secrets** (`HOST`, `USERNAME`, `PASSWORD`) for security.
+    2.  Built a custom **GitHub Actions Workflow** ([deploy.yml](file:///c:/Users/akram/PhpstormProjects/portfolio/.github/workflows/deploy.yml)).
+    3.  Switched from SCP to **FTP Deployment** (`FTP-Deploy-Action`) to successfully bypass the firewall restrictions.
+*   **Result**: Now, every time you run `git push`, the site is automatically built, optimized, and deployed to `akramkibout.fr` in minutes.
+
+---
+
+### 🏁 Final Outcome
+A robust, professional, and automated portfolio that serves as a powerful argument for your engineering apprenticeship search.
+
+**Next Steps**:
+- Share the link on LinkedIn!
+- Keep adding new projects as you build them.
