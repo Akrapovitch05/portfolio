@@ -3,6 +3,7 @@
 import { BentoCard } from "./BentoCard";
 import { GraduationCap, BookOpen, Rocket, School, Award, Briefcase } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export const Timeline = () => {
     const steps = [
@@ -20,7 +21,7 @@ export const Timeline = () => {
             title: "Concepteur Développeur d'Applications (Bac+3)",
             school: "CESI Lyon",
             description: "Apprentissage par Projets (PBL) : Résolution de problèmes concrets en autonomie, simulant la réalité en entreprise. Développement d'une rigueur professionnelle et d'une capacité d'adaptation rapide.",
-            icon: BookOpen,
+            logo: "/logo_cesi.png", // Use real logo
             color: "bg-indigo-500",
             textColor: "text-indigo-400",
             current: true
@@ -30,7 +31,7 @@ export const Timeline = () => {
             title: "Manager en Architecture et Systèmes Logiciels (Bac+5)",
             school: "CESI Lyon - Programme Grande École",
             description: "Cycle Ingénieur en alternance. Objectif : Devenir un expert technique capable de piloter des projets d'envergure. Recherche d'une alternance de 3 ans pour construire une relation de confiance durable.",
-            icon: GraduationCap,
+            logo: "/logo_cesi.png", // Use real logo
             color: "bg-purple-500",
             textColor: "text-purple-400",
             highlight: true
@@ -76,11 +77,24 @@ export const Timeline = () => {
                         </div>
 
                         <div className="text-zinc-300 font-medium mb-2 flex items-center gap-2">
-                            <step.icon size={16} className={step.textColor} />
-                            {step.school}
+                            {/* Logic to show logo OR icon */}
+                            {step.logo ? (
+                                <div className="relative w-24 h-8 shrink-0 bg-white/90 rounded px-1">
+                                    <Image
+                                        src={step.logo}
+                                        alt={step.school}
+                                        fill
+                                        className="object-contain"
+                                    />
+                                </div>
+                            ) : (
+                                step.icon && <step.icon size={16} className={step.textColor} />
+                            )}
+                            {/* Only show text if no logo, or maybe show text next to logo? Let's hide text if logo present for cleaner look, OR keep both. Let's keep both for clarity but make layout flexible */}
+                            {!step.logo && <span>{step.school}</span>}
                         </div>
 
-                        <p className="text-zinc-400 text-sm leading-relaxed max-w-3xl">
+                        <p className="text-zinc-400 text-sm leading-relaxed max-w-3xl mt-2">
                             {step.description}
                         </p>
                     </motion.div>

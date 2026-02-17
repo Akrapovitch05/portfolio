@@ -35,10 +35,11 @@ export const Stack = () => {
 
     return (
         <BentoCard colSpan={1} rowSpan={2} className="relative overflow-hidden group">
-            {/* Background Icon */}
-            <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                <Layers className="w-32 h-32 text-zinc-500" />
+            {/* Background Icon & Decoration */}
+            <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                <Layers className="w-48 h-48 text-zinc-500 -rotate-12 translate-x-10 -translate-y-10" />
             </div>
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             <div className="flex flex-col gap-6 h-full z-10 relative">
                 <div>

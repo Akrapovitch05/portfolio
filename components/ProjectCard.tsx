@@ -22,7 +22,12 @@ export const ProjectCard = () => {
                             <div className="inline-flex items-center gap-2 px-3 py-1 mb-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-medium">
                                 Flagship Project
                             </div>
-                            <h2 className="text-2xl font-bold text-white">ERP de Logistique - H Transport</h2>
+                            <div className="flex items-center gap-4 mb-1">
+                                <div className="hidden md:block w-12 h-12 rounded-lg bg-white overflow-hidden shrink-0 border border-white/10">
+                                    <img src="/logo_h_transport.jpg" alt="Logo H Transport" className="w-full h-full object-contain p-1" />
+                                </div>
+                                <h2 className="text-2xl font-bold text-white">ERP de Logistique - H Transport</h2>
+                            </div>
                             <p className="text-zinc-400 mt-1">Digitalisation Globale & Gestion de Flotte</p>
                         </div>
                     </div>

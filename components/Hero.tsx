@@ -69,6 +69,14 @@ export const Hero = () => {
 
                 {/* Background decoration */}
                 <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl group-hover:bg-indigo-500/20 transition-all duration-500" />
+                <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none">
+                    <div className="absolute top-[10%] right-[5%] w-32 h-32 bg-purple-500/10 rounded-full blur-2xl animate-pulse" />
+                    <div className="absolute bottom-[20%] left-[10%] w-48 h-48 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-700" />
+
+                    {/* Abstract Tech Lines */}
+                    <div className="absolute top-10 right-10 w-24 h-24 border border-white/5 rounded-lg rotate-12" />
+                    <div className="absolute top-14 right-14 w-16 h-16 border border-white/5 rounded-lg -rotate-6" />
+                </div>
             </BentoCard>
 
             <AnimatePresence>
