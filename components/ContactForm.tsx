@@ -15,7 +15,7 @@ export const ContactForm = () => {
         const data = new FormData(form);
 
         try {
-            const response = await fetch("https://formspree.io/f/mqkvernz", { // Placeholder Formspree ID, user to replace or activate
+            const response = await fetch("https://formspree.io/f/xnjbvkle", {
                 method: "POST",
                 body: data,
                 headers: {
