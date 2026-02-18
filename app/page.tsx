@@ -8,6 +8,7 @@ import { Socials } from "@/components/Socials";
 import { ContactForm } from "@/components/ContactForm";
 
 import { Timeline } from "@/components/Timeline";
+import { RecruiterInfo } from "@/components/RecruiterInfo";
 
 export default function Home() {
   return (
@@ -24,13 +25,17 @@ export default function Home() {
           {/* Row 3: Timeline (3x1) */}
           <Timeline />
 
-          {/* Row 4: Contact (2x1) + Vlogs (1x1) */}
+          {/* Row 4: Recruiter Info (2x1) + Experience (1x1) */}
+          <RecruiterInfo />
+          <Experience />
+
+          {/* Row 5: Contact (2x1) + Vlogs (1x1) */}
           <ContactForm />
           <Vlogs />
 
-          {/* Row 5: Socials (2x1) + Experience (1x1) */}
+          {/* Row 6: Socials (2x1) */}
           <Socials />
-          <Experience />
+
         </BentoGrid>
 
         <footer className="text-center text-zinc-600 text-sm py-8">
