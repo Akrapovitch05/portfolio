@@ -19,7 +19,8 @@ export const Spotlight = () => {
             rafRef.current = requestAnimationFrame(() => {
                 if (divRef.current) {
                     divRef.current.style.opacity = "1";
-                    divRef.current.style.background = `radial-gradient(600px circle at ${e.clientX}px ${e.clientY}px, rgba(99, 102, 241, 0.15), transparent 40%)`;
+                    divRef.current.style.setProperty("--x", `${e.clientX}px`);
+                    divRef.current.style.setProperty("--y", `${e.clientY}px`);
                 }
             });
         };
@@ -43,7 +44,10 @@ export const Spotlight = () => {
     return (
         <div
             ref={divRef}
-            className="pointer-events-none fixed inset-0 z-30 transition-opacity duration-300 opacity-0"
+            className="pointer-events-none fixed inset-0 z-30 transition-opacity duration-300 opacity-0 will-change-[opacity,background]"
+            style={{
+                background: `radial-gradient(600px circle at var(--x, 0px) var(--y, 0px), rgba(99, 102, 241, 0.15), transparent 40%)`,
+            }}
         />
     );
 };

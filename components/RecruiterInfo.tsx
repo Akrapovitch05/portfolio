@@ -53,7 +53,7 @@ export const RecruiterInfo = () => {
                 </div>
 
                 {/* Calendar Preview */}
-                <div className="relative group/calendar cursor-pointer overflow-hidden rounded-xl border border-white/10">
+                <div className="relative group/calendar cursor-pointer overflow-hidden rounded-xl border border-white/10 min-h-[200px] md:min-h-0">
                     <a href="/calendrier_fisa.pdf" target="_blank" className="block w-full h-full">
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10 flex items-end p-4">
                             <div className="text-white">

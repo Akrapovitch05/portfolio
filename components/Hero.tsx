@@ -13,7 +13,7 @@ export const Hero = () => {
     return (
         <>
             <BentoCard colSpan={2} rowSpan={1} className="relative group">
-                <div className="absolute top-4 right-4 animate-pulse">
+                <div className="w-full flex justify-end mb-2 md:absolute md:top-4 md:right-4 md:mb-0 z-20 animate-pulse">
                     <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-[10px] font-medium">
                         <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-ping" />
                         Recherche Alternance (3 ans)
