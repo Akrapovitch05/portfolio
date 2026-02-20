@@ -2,13 +2,14 @@
 
 import { BentoCard } from "./BentoCard";
 import Image from "next/image";
-import { MapPin } from "lucide-react";
+import { MapPin, X, GraduationCap, Code2, Database, Globe, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 import { ImageModal } from "./ImageModal";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 export const Hero = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isCdaOpen, setIsCdaOpen] = useState(false);
 
     return (
         <>
@@ -38,8 +39,12 @@ export const Hero = () => {
                         <h1 className="text-2xl font-bold tracking-tight text-white leading-tight">
                             Akram Kibout
                         </h1>
-                        <p className="text-indigo-400 font-medium text-sm">
-                            Concepteur Développeur
+                        <p
+                            className="text-indigo-400 font-medium text-sm cursor-pointer hover:text-indigo-300 hover:underline underline-offset-2 decoration-dotted transition-colors"
+                            onClick={() => setIsCdaOpen(true)}
+                            title="En savoir plus"
+                        >
+                            Concepteur Développeur ✦
                         </p>
                         <div className="flex items-center gap-1 text-zinc-500 text-xs mt-1">
                             <MapPin size={12} />
@@ -82,6 +87,78 @@ export const Hero = () => {
                         imageSrc="/me.jpg"
                         altText="Akram Kibout"
                     />
+                )}
+            </AnimatePresence>
+
+            {/* CDA Info Modal */}
+            <AnimatePresence>
+                {isCdaOpen && (
+                    <motion.div
+                        className="fixed inset-0 z-50 flex items-center justify-center p-4"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setIsCdaOpen(false)}
+                    >
+                        {/* Backdrop */}
+                        <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+
+                        {/* Modal */}
+                        <motion.div
+                            className="relative bg-[#111] border border-white/10 rounded-2xl p-6 max-w-md w-full shadow-2xl z-10"
+                            initial={{ scale: 0.9, opacity: 0, y: 20 }}
+                            animate={{ scale: 1, opacity: 1, y: 0 }}
+                            exit={{ scale: 0.9, opacity: 0, y: 20 }}
+                            transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            {/* Close */}
+                            <button
+                                onClick={() => setIsCdaOpen(false)}
+                                className="absolute top-4 right-4 text-zinc-500 hover:text-white transition-colors"
+                            >
+                                <X size={18} />
+                            </button>
+
+                            {/* Header */}
+                            <div className="flex items-center gap-3 mb-5">
+                                <div className="p-2.5 bg-indigo-500/20 rounded-xl">
+                                    <GraduationCap size={22} className="text-indigo-400" />
+                                </div>
+                                <div>
+                                    <h3 className="text-white font-bold text-base leading-tight">Concepteur Développeur d&apos;Applications</h3>
+                                    <p className="text-indigo-400 text-xs font-medium">Titre RNCP Niveau 6 · Bac+3</p>
+                                </div>
+                            </div>
+
+                            {/* Description */}
+                            <p className="text-zinc-400 text-sm leading-relaxed mb-5">
+                                Le <span className="text-white font-semibold">CDA</span> est un titre professionnel de niveau Bac+3 reconnu par l&apos;État (RNCP n°31678). Il forme des développeurs capables de concevoir, développer et déployer des applications logicielles complètes, du frontend au backend.
+                            </p>
+
+                            {/* Key skills */}
+                            <div className="space-y-2.5 mb-5">
+                                <p className="text-zinc-500 text-xs uppercase tracking-wider font-semibold">Compétences clés</p>
+                                {[
+                                    { icon: Code2, label: "Développement Frontend & Backend", color: "text-blue-400" },
+                                    { icon: Database, label: "Conception & gestion de bases de données", color: "text-green-400" },
+                                    { icon: Globe, label: "Architecture logicielle & API REST", color: "text-purple-400" },
+                                    { icon: CheckCircle2, label: "Méthodes Agile / Gestion de projet", color: "text-indigo-400" },
+                                ].map(({ icon: Icon, label, color }) => (
+                                    <div key={label} className="flex items-center gap-2.5">
+                                        <Icon size={15} className={color} />
+                                        <span className="text-zinc-300 text-sm">{label}</span>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* Footer info */}
+                            <div className="flex items-center justify-between pt-4 border-t border-white/5 text-xs text-zinc-500">
+                                <span>📍 CESI École d&apos;Ingénieurs — Lyon</span>
+                                <span className="text-indigo-400 font-semibold">2023 → 2026</span>
+                            </div>
+                        </motion.div>
+                    </motion.div>
                 )}
             </AnimatePresence>
         </>
