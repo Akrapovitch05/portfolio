@@ -8,7 +8,7 @@ import Image from "next/image";
 export const Timeline = () => {
     const steps = [
         {
-            year: "2019 - 2022",
+            year: "2020 - 2023",
             title: "Baccalauréat Général",
             school: "Cité Scolaire Internationale - Lyon",
             description: "Spécialités Scientifiques. Obtention du Baccalauréat avec mention.",
@@ -17,7 +17,7 @@ export const Timeline = () => {
             textColor: "text-blue-400"
         },
         {
-            year: "2023 - 2024",
+            year: "2023 - 2026",
             title: "Concepteur Développeur d'Applications (Bac+3)",
             school: "CESI Lyon",
             description: "Apprentissage par Projets (PBL) : Résolution de problèmes concrets en autonomie, simulant la réalité en entreprise. Développement d'une rigueur professionnelle et d'une capacité d'adaptation rapide.",
@@ -27,7 +27,7 @@ export const Timeline = () => {
             current: true
         },
         {
-            year: "2024 - 2027",
+            year: "2026 - 2029",
             title: "Manager en Architecture et Systèmes Logiciels (Bac+5)",
             school: "CESI Lyon - Programme Grande École",
             description: "Cycle Ingénieur en alternance. Objectif : Devenir un expert technique capable de piloter des projets d'envergure. Recherche d'une alternance de 3 ans pour construire une relation de confiance durable.",
